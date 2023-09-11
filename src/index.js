@@ -13,7 +13,7 @@ import { Login } from './views/Login';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import Trainer from './views/Trainer';
-
+import Contact from './views/Contact';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
@@ -32,6 +32,7 @@ root.render(
               <Route path="/login" element={<Login />} />
               <Route path="/student" element={<Student />} />
               <Route path="/trainer" element={<Trainer />} />
+              <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<NotFound />} />
               
             </Routes>

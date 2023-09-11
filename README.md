@@ -17,7 +17,7 @@ npx tailwindcss init</code>
 ## [404](src/views/NotFound.jsx)
 ## [Login](src/views/Login.jsx)
 ## [Trainer](src/views/Trainer.jsx)
-
+## [Contact](src/views/Contact.jsx)
 
 # [hooks](src/hooks/useWindowSize.js)
 

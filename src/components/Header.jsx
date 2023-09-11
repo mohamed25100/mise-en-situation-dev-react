@@ -17,7 +17,7 @@ export const Header = () => {
   
   return (
     <header>
-      <div className="">
+      <div className="bg-amber-100">
         {/* NAVIGATION  */}
         {/* MENU DESKTOP  */}
         {/* SI ECRAN > 900  */}
