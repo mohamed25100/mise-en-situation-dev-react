@@ -8,6 +8,8 @@ npx tailwindcss init
 # components
 [Footer.jsx](src/components/Footer.jsx)
 
+# [Formations](src/components/Formations.jsx)
+
 
 
 
