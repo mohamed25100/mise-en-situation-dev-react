@@ -1,10 +1,21 @@
-# install tailwind
+# [install tailwind](https://tailwindcss.com/docs/guides/create-react-app)
 
-<code>
+<code>npm install -D tailwindcss
 
-npm install -D tailwindcss
-
+npx tailwindcss init
 </code>
+
+# components
+[Footer.jsx](src/components/Footer.jsx)
+
+
+
+
+
+
+
+
+
 
 
 # Getting Started with Create React App
