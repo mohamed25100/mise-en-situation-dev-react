@@ -1,26 +1,25 @@
 import { Formations, Table } from "./Formations";
 
 export const Footer = () => {
-  const year = new Date().getFullYear();
   return (
-      <footer className='py-4'>
+      <footer className='flex py-4 bg-orange-300 gap-5'>
           <div>
-              09 72 37 73 73 <br />
-              (Prix d'un appel local)<br />
-              www.dawan.fr<br />
-              Formations, Ingénierie, Conseil<br />
-              France - Belgique - Suisse<br />
+            
+            <img src="https://www.dawan.fr/build/images/dawan-logo.5b6f94e2.png" alt="logo" />
+            <ul>
+                <li>09 72 37 73 73 <br />(Prix d'un appel local)</li>
+                <li>www.dawan.fr</li>
+                <li>Formations, Ingénierie, Conseil</li>
+                <li>France - Belgique - Suisse</li>
+            </ul>
+
           </div>
 
           {/* Le top 30 de nos formations */}
           <div>
-              <h1>Le top 30 de nos formations</h1>
+              <h1 className="text-xl font-bold">Le top 30 de nos formations</h1>
 
-              <table>
-                  <tr>
-                      <th>Formation</th>
-                  </tr>
-
+              <table className="grid grid-cols-2">
                   <Formations />
                   
               </table>
@@ -29,7 +28,7 @@ export const Footer = () => {
 
           {/* Découvrez Dawan */}
           <div>
-              <h1>Découvrez Dawan</h1>
+              <h1 className="text-xl font-bold">Découvrez Dawan</h1>
               <p>Présentation de notre organisme de formation</p>
               <p>Modalités pédagogiques</p>
               <p>Références</p>
@@ -37,12 +36,8 @@ export const Footer = () => {
 
           {/* Suivez nous */}
           <div>
-              <h1>Suivez nous</h1>
-
-              
+              <h1 className="text-xl font-bold">Suivez nous</h1>
           </div>
-
-          <p className='text-center font-bold text-lg'>    dawan - {year} - Copyright - All right reserved</p>
       </footer>
   )
 }

@@ -1,20 +1,25 @@
 # [install tailwind](https://tailwindcss.com/docs/guides/create-react-app)
 
 <code>npm install -D tailwindcss
-
-npx tailwindcss init
-</code>
+npx tailwindcss init</code>
 
 # components
 [Footer.jsx](src/components/Footer.jsx)
+[Header.jsx](src/components/Header.jsx)
+[DesktopMenu](src/components/DesktopMenu.jsx)
+[MobileMenu](src/components/MobileMenu.jsx)
 
 # [Formations](src/components/Formations.jsx)
 
+# views
+## [Home](src/views/Home.jsx)
+## [Student](src/views/Student.jsx)
+## [404](src/views/NotFound.jsx)
+## [Login](src/views/Login.jsx)
+## [Trainer](src/views/Trainer.jsx)
 
 
-
-
-
+# [hooks](src/hooks/useWindowSize.js)
 
 
 
