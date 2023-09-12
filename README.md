@@ -18,11 +18,13 @@ npx tailwindcss init</code>
 ## [Login](src/views/Login.jsx)
 ## [Trainer](src/views/Trainer.jsx)
 ## [Contact](src/views/Contact.jsx)
+## [Training](src/views/Training.jsx)
 
+## [FormulaireInscription](src/views/FormulaireInscription.jsx)
 # [hooks](src/hooks/useWindowSize.js)
 
 
-
+# [titre](src/views/bob.jsx)
 
 
 # Getting Started with Create React App

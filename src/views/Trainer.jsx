@@ -1,8 +1,7 @@
-const Trainer = () => {
-    return (
-      <>
-        <div>Trainer view</div>
-      </>
-    );
-  }
-  export default Trainer
+export const Trainer = () => {
+  return (
+    <>
+      <div>Trainer view</div>
+    </>
+  );
+}
