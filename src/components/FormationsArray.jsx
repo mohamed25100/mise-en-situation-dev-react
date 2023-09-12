@@ -1,4 +1,4 @@
-export const FormationsArray = () => [
+export const FormationsArray = [
     "Formation Webmaster",
     "Formation HTML 5",
     "Formation jQuery",

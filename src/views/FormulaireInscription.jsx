@@ -1,38 +1,7 @@
 import React, { useState } from 'react';
+import { FormationsArray } from '../components/FormationsArray';
 export const FormulaireInscription = () => {
 
-    const formations = [
-        "Formation Webmaster",
-        "Formation HTML 5",
-        "Formation jQuery",
-        "Formation E-marketing",
-        "Formation PHP",
-        "Formation Symfony",
-        "Formation Drupal",
-        "Formation Wordpress",
-        "Formation Joomla",
-        "Formation Talend",
-        "Formation Autocad",
-        "Formation Photoshop",
-        "Formation Illustrator",
-        "Formation InDesign",
-        "Formation Premiere",
-        "Formation Excel",
-        "Formation Word",
-        "Formation Oracle",
-        "Formation Réseaux",
-        "Formation VMware",
-        "Formation Linux",
-        "Formation Windows Server",
-        "Formation Java",
-        "Formation JEE",
-        "Formation Cobol",
-        "Formation Python",
-        "Formation Delphi",
-        "Formation .NET",
-        "Formation C#",
-        "Formation VB.net"
-      ];
 
     const [formData, setFormData] = useState({
         nom: '',
@@ -133,7 +102,7 @@ export const FormulaireInscription = () => {
                             <option disabled selected value="">Selectionner votre formation</option>
                             
 
-                            {formations.map((formation, index) => (
+                            {FormationsArray.map((formation, index) => (
                             <option key={index} value={formation}>
                                 {formation}
                             </option>
