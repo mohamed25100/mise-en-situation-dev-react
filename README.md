@@ -19,8 +19,10 @@ npx tailwindcss init</code>
 ## [Trainer](src/views/Trainer.jsx)
 ## [Contact](src/views/Contact.jsx)
 ## [Training](src/views/Training.jsx)
-
 ## [FormulaireInscription](src/views/FormulaireInscription.jsx)
+## [managerTraining](src/views/manager/training.jsx)
+## [btn](src/components/Btn.jsx)
+
 # [hooks](src/hooks/useWindowSize.js)
 
 

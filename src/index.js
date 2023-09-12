@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './index.css';// tailwind
-import 'font-awesome/css/font-awesome.min.css';
+import 'font-awesome/css/font-awesome.min.css';//font awesome
 
 import reportWebVitals from './reportWebVitals';
 
@@ -16,6 +16,7 @@ import { Trainer } from './views/Trainer';
 import { Contact } from './views/Contact';
 import { Training } from './views/Training';
 import { FormulaireInscription } from './views/FormulaireInscription';
+import { ManagerTraining } from './views/manager/training';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
@@ -37,6 +38,7 @@ root.render(
               <Route path="/contact" element={<Contact />} />
               <Route path="/training" element={<Training />} />
               <Route path="/formulaire-inscription" element={<FormulaireInscription />} />
+              <Route path="/manager/training" element={<ManagerTraining />} />
               <Route path="*" element={<NotFound />} />
               
             </Routes>
