@@ -40,7 +40,6 @@ root.render(
               <Route path="/formulaire-inscription" element={<FormulaireInscription />} />
               <Route path="/manager/training" element={<ManagerTraining />} />
               <Route path="*" element={<NotFound />} />
-              
             </Routes>
           </div>
         </div>

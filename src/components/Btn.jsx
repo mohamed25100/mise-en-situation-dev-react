@@ -1,5 +1,5 @@
-export const BtnAjouter = () => {
+export const BtnAjouter = ({style, value}) => {
   return (
-        <button type="button">ajouter</button>
+        <button type="button" className={style}>{value}ajouter</button>
   );
 };

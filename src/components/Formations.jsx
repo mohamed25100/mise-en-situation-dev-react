@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormationsArray } from './FormationsArray';
+import { FormationsArray } from '../api/FormationsArray';
 
 export const Formations = () => {
   return (

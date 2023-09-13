@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FormationsArray } from '../components/FormationsArray';
+import { FormationsArray } from '../api/FormationsArray';
 export const FormulaireInscription = () => {
 
 

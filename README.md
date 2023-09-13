@@ -8,6 +8,12 @@ npx tailwindcss init</code>
 [Header.jsx](src/components/Header.jsx)
 [DesktopMenu](src/components/DesktopMenu.jsx)
 [MobileMenu](src/components/MobileMenu.jsx)
+[src/components/CreateTraining.tsx](src/components/CreateTraining.tsx)
+[src/components/GetTraining.tsx](src/components/GetTraining.tsx)
+[src/components/UpdateTraining.tsx](src/components/UpdateTraining.tsx)
+
+[src/components/DeleteTraining.tsx](src/components/DeleteTraining.tsx) 
+
 
 # [Formations](src/components/Formations.jsx)
 
