@@ -1,11 +1,25 @@
+import { useNavigate } from "react-router-dom";
+
 export const BtnAjouter = () => {
   return (
         <button type="button">ajouter</button>
   );
 };
 
-export const Btn = ({text,nameClass, onClick}) => {
+export const Btn = ({text,className, onClick}) => {
   return(
-    <button type="button" className={nameClass} onClick={onClick}>{text}</button>
+    <button type="button" className={className} onClick={onClick}>{text}</button>
   )
+}
+
+export const BackBtn = ({className}) => {
+  const navigate = useNavigate()
+return (
+  <button
+  onClick={() => navigate(-1)}
+  className={className}
+  >
+      Retour
+  </button>
+)
 }

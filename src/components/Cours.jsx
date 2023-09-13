@@ -1,9 +1,11 @@
 
 import React from 'react'
 import { Btn } from './Btn'
+import { useNavigate } from 'react-router-dom'
 
-export const Cours = ({cours}) => {
+export const Cours = ({cours,handleClick}) => {
     const nameClass = "py-2 px-10 hover:text-pink-700 shadow-sm shadow-black hover:bg-pink-300 first-letter"
+    
 
   return (
     <>
@@ -23,7 +25,9 @@ export const Cours = ({cours}) => {
                             <tr key={cour.id}>
                                 <td className="border-b border-pink-700 p-4 pl-8 text-black text-center">{cour.nomCour}</td>
                                 <td className="border-b border-pink-700 p-4 pl-8 text-black text-center">{cour.formationNomFormation}</td>
-                                <td className="border-b border-pink-700 p-4 pl-8 text-black text-center"><Btn text={"Accès contenu"} nameClass={nameClass} /></td>
+                                <td className="border-b border-pink-700 p-4 pl-8 text-black text-center"><Btn text={"Accès contenu"} nameClass={nameClass} onClick={() =>{
+                                    handleClick(cour.id)
+                                }  } /></td>
                             </tr>
                         ))
 

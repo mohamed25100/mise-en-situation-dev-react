@@ -10,6 +10,7 @@ import { Training } from './views/Training';
 import { FormulaireInscription } from './views/FormulaireInscription';
 import { ManagerTraining } from './views/manager/training';
 import { Route , Routes, BrowserRouter } from 'react-router-dom';
+import { Contenu } from './views/Contenu';
 
 const App = () => {
 
@@ -32,6 +33,7 @@ const App = () => {
               <Route path="/login" element={<Login />} />
               <Route path="/student" element={<Student />} />
               <Route path="/trainer/:id" element={<Trainer />} />
+              <Route path="/trainer/contenu/:id/:courId" element={<Contenu />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/training" element={<Training />} />
               <Route path="/formulaire-inscription" element={<FormulaireInscription />} />
