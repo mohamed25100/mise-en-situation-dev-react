@@ -1,15 +1,18 @@
 import React from 'react';
 import { FormationsArray } from './FormationsArray';
 
-export const Formations = () => {
+export const Formations = ({formTab}) => {
+  
   return (
-    <>
-          {FormationsArray.map((formation, index) => (
-            <tr>
-            <td key={index}>{formation}</td>
-            </tr>
+    <div className="grid grid-cols-2 gap-2  ">
+
+          {formTab.map((formation, index) => (
+            
+            <p key={index}>{formation.nomFormation}</p>
+            
             
           ))}
-    </>
+        
+    </div>
   );
 };

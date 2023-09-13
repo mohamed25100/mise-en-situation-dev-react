@@ -14,7 +14,7 @@ export const DesktopMenu = ({ links }) => {
             <li>Qui sommes-nous</li>
           </ul>
         </li>
-        <Link className='my-auto' to={"/login"}>se conecter</Link>
+        <Link className='my-auto' to={"/login"}>se connecter</Link>
       </ul>
     </nav>
   )

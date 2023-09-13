@@ -1,8 +1,34 @@
+import axios from "axios";
 import { Formations, Table } from "./Formations";
+import { useEffect, useState } from "react";
 
 export const Footer = () => {
+
+    const [formTab, setFormation] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
+    const URL_API = "//localhost:8080/manager/formation"
+    const fetchFormation = async () => {
+        setLoading(true);
+        try {
+          const { data } = await axios.get(URL_API);
+          
+          setFormation(data);
+        } catch (error) {
+            console.log(error);
+          setError(error.message || "Une erreur est survenue");
+        } finally {
+            setLoading(false);
+        }
+    };
+    useEffect(()=>{
+        fetchFormation()
+    },[])
+    
+
+
   return (
-      <footer className='flex py-4 bg-orange-300 gap-5'>
+      <footer className='flex py-4 bg-orange-300 gap-5 justify-center'>
           <div>
             
             <img src="https://www.dawan.fr/build/images/dawan-logo.5b6f94e2.png" alt="logo" />
@@ -19,10 +45,10 @@ export const Footer = () => {
           <div>
               <h1 className="text-xl font-bold">Le top 30 de nos formations</h1>
 
-              <table className="grid grid-cols-2">
-                  <Formations />
+              
+              <Formations formTab={formTab}/>
                   
-              </table>
+              
           </div>
           {/* end Le top 30 de nos formations */}
 
