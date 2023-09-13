@@ -1,12 +1,11 @@
 import React from 'react';
-import { FormationsArray } from '../api/FormationsArray';
 
-export const Formations = () => {
+export const Formations = ({FormationsArray}) => {
   return (
     <>
           {FormationsArray.map((formation, index) => (
             <tr>
-            <td key={index}>{formation}</td>
+            <td key={index}>{formation.nomFormation}</td>
             </tr>
             
           ))}

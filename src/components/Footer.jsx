@@ -1,6 +1,30 @@
+import axios from "axios";
 import { Formations, Table } from "./Formations";
+import { useEffect, useState } from "react";
 
 export const Footer = () => {
+
+    const [FormationsArray, setFormation] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
+    const URL_API = "http://localhost:8085/manager/formation"
+    const fetchFormation = async () => {
+        setLoading(true);
+        try {
+          const { data } = await axios.get(URL_API);
+          
+          setFormation(data);
+        } catch (error) {
+            console.log(error);
+          setError(error.message || "Une erreur est survenue");
+        } finally {
+            setLoading(false);
+        }
+    };
+    useEffect(()=>{
+        fetchFormation()
+    },[])
+
   return (
       <footer className='flex py-4 bg-orange-300 gap-5'>
           <div>
@@ -20,7 +44,7 @@ export const Footer = () => {
               <h1 className="text-xl font-bold">Le top 30 de nos formations</h1>
 
               <table className="grid grid-cols-2">
-                  <Formations />
+              <Formations FormationsArray={FormationsArray}/>
                   
               </table>
           </div>
