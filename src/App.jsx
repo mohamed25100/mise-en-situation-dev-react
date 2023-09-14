@@ -33,10 +33,12 @@ const App = () => {
               {/* element = composant // path: chemin dan l'url */}
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
-              <Route path="/etudiant" element={<Student />} />
+              <Route path="/etudiant/:id" element={<Student />} />
+              <Route path="/etudiant/contenu/:id/:courId" element={<Contenu />} />
+              <Route path="/etudiant/contenuDetail/:id" element={<ContenuDetail />} />
               <Route path="/formateur/:id" element={<Trainer />} />
               <Route path="/formateur/contenu/:id/:courId" element={<Contenu />} />
-              <Route path="/formateur/contenuFormulaire/:id/:idContenu" element={<ContenuFormulaire />} />
+              <Route path="/formateur/contenuFormulaire/:id/:courId/:contenuId" element={<ContenuFormulaire />} />
               <Route path="/formateur/contenuDetail/:id" element={<ContenuDetail />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/formation" element={<Training />} />

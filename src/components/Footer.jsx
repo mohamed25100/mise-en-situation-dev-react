@@ -7,7 +7,7 @@ export const Footer = () => {
     const [formTab, setFormation] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
-    const URL_API = "//localhost:8080/manager/formation"
+    const URL_API = "//localhost:8080/formation"
     const fetchFormation = async () => {
         setLoading(true);
         try {

@@ -22,17 +22,21 @@ export const ContenuDetail = () => {
            const {response} = await axios.get(RESSOURCE,{
             responseType: 'blob'
            })
-           axios({
-            url : RESSOURCE,
-            method : 'GET',
-            responseType : 'blob'
-           }).then((response) => {
-            // create file link in browser's memory
-            const href = URL.createObjectURL(response.data);
-            const link = document.getElementById('downloadFile')
-            link.href = href
-            link.setAttribute('download',data.path.slice(12))
-        });
+           if(data.path!=null){
+                axios({
+                url : RESSOURCE,
+                method : 'GET',
+                responseType : 'blob'
+            }).then((response) => {
+                // create file link in browser's memory
+                const href = URL.createObjectURL(response.data);
+                const link = document.getElementById('downloadFile')
+                link.href = href
+                link.setAttribute('download',data.path.slice(12))
+            })
+           }  
+           /*
+           */
            setContenu(data)
         } catch (error) {
             console.log(error);
@@ -55,7 +59,8 @@ export const ContenuDetail = () => {
                 <BackBtn className={'py-4 px-10 bd-pink-50 text-pink-700 shadow-sm shadow-black hover:bg-pink-300 first-letter my-4'}/>
                 <div></div>
                 <div></div>
-                <a className='py-4 px-10 bd-pink-50 text-pink-700 shadow-sm shadow-black hover:bg-pink-300 first-letter my-4' id='downloadFile'>Télécharger Fichier</a>
+                {contenu !== null && contenu.path !== null && <a className='py-4 px-10 bd-pink-50 text-pink-700 shadow-sm shadow-black hover:bg-pink-300 first-letter my-4' id='downloadFile'>Télécharger Fichier</a> }
+                
             </div>
             {contenu !== null && 
             <div className='flex flex-col gap-2'>

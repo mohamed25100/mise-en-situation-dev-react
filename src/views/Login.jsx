@@ -26,7 +26,7 @@ export const Login = () => {
             navigate(`/formateur/${data.id}`)
             break;
           case "Etudiant":
-            
+            navigate(`/etudiant/${data.id}`)
             break;
           case "Manager":
             
@@ -63,7 +63,7 @@ export const Login = () => {
                 <label htmlFor="email">Email</label>
                     <input type="email" name="email" id="email" className={inputClass} placeholder="Tapez votre email ici" onChange={(e)=> setEmail(e.target.value)} value={email} />
                     <label htmlFor="password">Mot de passe</label>
-                    <input type="password" name="password" id="password" className={inputClass} placeholder="Tapez votre email ici" onChange={(e)=> setPassword(e.target.value)} value={password} />
+                    <input type="password" name="password" id="password" className={inputClass} placeholder="*********" onChange={(e)=> setPassword(e.target.value)} value={password} />
                     <button type="submit" className="bg-red-700 my-2 p-2 w-1/2 ">S'inscrire</button>
                 </form>
             </div>

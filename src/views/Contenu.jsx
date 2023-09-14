@@ -7,6 +7,8 @@ import { faInfo, faPen } from "@fortawesome/free-solid-svg-icons"
 
 export const Contenu = () => {
 
+    const pathname = window.location.pathname;
+    console.log(pathname);
     const {id,courId} = useParams()
     const CONTENU_URL = `//localhost:8080/contenu/formateur`
     const [contenus, setContenu] = useState([])
@@ -45,7 +47,7 @@ export const Contenu = () => {
                 <div ></div>
                 <div ></div>
                 <Btn className={'py-4 px-10 bd-pink-50 text-pink-700 shadow-sm shadow-black hover:bg-pink-300 first-letter my-4'} text={"Ajouter"} onClick={()=>{
-                    navigate(`/formateur/contenuFormulaire/${id}/0`)
+                    navigate(`/formateur/contenuFormulaire/${id}/${courId}/0`)
                 }}/>
             </div>
             
@@ -65,7 +67,10 @@ export const Contenu = () => {
                                 <td className="border-b border-pink-700 p-4 pl-8 text-black text-center">{contenu.courNomCour}</td>
                                 <td className="border-b border-pink-700 p-4 pl-8 text-black text-center">
                                     <div className="flex justify-center gap-5">
-                                        <FontAwesomeIcon icon={faPen} className="text-orange-700 p-1 hover:text-pink-700" size="lg" />
+                                        <FontAwesomeIcon icon={faPen} className="text-orange-700 p-1 hover:text-pink-700" size="lg" onClick={(e)=>{
+                                            e.preventDefault()
+                                            navigate(`/formateur/contenuFormulaire/${id}/${courId}/${contenu.id}`)
+                                        }} />
                                         <FontAwesomeIcon icon={faInfo} className="text-gray-700 p-1 hover:text-pink-700" size="lg" onClick={(e)=>{
                                             e.preventDefault()
                                             navigate(`/formateur/contenuDetail/${contenu.id}`)
