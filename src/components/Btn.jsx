@@ -6,6 +6,12 @@ export const BtnAjouter = () => {
   );
 };
 
+export const BtnSubmit = ({text,className}) => {
+  return(
+    <button type="submit" className={className} >{text}</button>
+  )
+}
+
 export const Btn = ({text,className, onClick}) => {
   return(
     <button type="button" className={className} onClick={onClick}>{text}</button>

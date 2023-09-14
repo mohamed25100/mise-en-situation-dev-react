@@ -44,7 +44,9 @@ export const Contenu = () => {
                 <BackBtn className={'py-4 px-10 bd-pink-50 text-pink-700 shadow-sm shadow-black hover:bg-pink-300 first-letter my-4'}/>
                 <div ></div>
                 <div ></div>
-                <Btn className={'py-4 px-10 bd-pink-50 text-pink-700 shadow-sm shadow-black hover:bg-pink-300 first-letter my-4'} text={"Ajouter"}/>
+                <Btn className={'py-4 px-10 bd-pink-50 text-pink-700 shadow-sm shadow-black hover:bg-pink-300 first-letter my-4'} text={"Ajouter"} onClick={()=>{
+                    navigate(`/formateur/contenuFormulaire/${id}/0`)
+                }}/>
             </div>
             
             <table className="border-collapse table-fixed w-full">
