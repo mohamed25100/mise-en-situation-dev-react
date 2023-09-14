@@ -1,16 +1,14 @@
 import React, { useState } from "react";
 import { useWindowSize } from "../hooks/useWindowSize";
-import { DesktopMenu } from "./DesktopMenu";// Desktop
-import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { MobileMenu } from "./MobileMenu";
+import { DesktopMenu } from "./header/DesktopMenu";// Desktop
+import { MobileMenu } from "./header/MobileMenu";
 
 export const Header = () => {
   const links = [
     { title: "Home", href: "/" },
     { title: "Login", href: "/login" },
-    { title: "Student", href: "/student" },
-    { title: "Trainer", href: "/trainer" }
+    { title: "Student", href: "/etudiant" },
+    { title: "Trainer", href: "/formateur" }
   ];
   const {mobile, desktop} = useWindowSize()
   const [isOpen, setIsOpen] = useState(false)
@@ -19,9 +17,13 @@ export const Header = () => {
     <header>
       <div className="bg-amber-100">
         {/* NAVIGATION  */}
+
+
         {/* MENU DESKTOP  */}
         {/* SI ECRAN > 900  */}
         { desktop && <DesktopMenu links={links} />}
+
+        {/* MENU Mobile  */}
         {/* SI ECRAN < 900  */}
         { mobile && <MobileMenu links={links} />}
       </div>

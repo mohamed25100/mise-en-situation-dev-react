@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 export const DesktopMenu = ({ links }) => {
+  const manager = true;
   return (
     <nav>
       <ul className='flex justify-between mx-5'>
@@ -9,7 +10,9 @@ export const DesktopMenu = ({ links }) => {
 
         <li className='my-auto'>
           <ul className='flex justify-around gap-14'>
-            <li>Formations</li>
+          { manager === true && <li><Link to={"/manager/formations"}>Formations</Link></li>}
+          { !manager && <li><Link to={"/formations"}>Formations</Link></li>}
+            
             <li><Link to={"/contact"}>Contact</Link></li>
             <li>Qui sommes-nous</li>
           </ul>
