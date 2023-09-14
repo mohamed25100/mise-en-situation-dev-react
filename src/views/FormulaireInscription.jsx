@@ -5,7 +5,7 @@ export const FormulaireInscription = () => {
     const [FormationsArray, setFormation] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
-    const URL_API = "http://localhost:8085/manager/formation"
+    const URL_API = "http://localhost:8080/manager/formation"
     const fetchFormation = async () => {
         setLoading(true);
         try {

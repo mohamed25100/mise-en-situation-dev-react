@@ -17,6 +17,8 @@ import { Contact } from './views/Contact';
 import { Training } from './views/Training';
 import { FormulaireInscription } from './views/FormulaireInscription';
 import { ManagerTraining } from './views/manager/training';
+import { AddFormation } from './views/formulaires/AddFormation';
+import { PutFormation } from './views/formulaires/PutFormulaire';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
@@ -33,12 +35,15 @@ root.render(
               {/* element = composant // path: chemin dan l'url */}
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
-              <Route path="/student" element={<Student />} />
-              <Route path="/trainer" element={<Trainer />} />
+              <Route path="/etudiant" element={<Student />} />
+              <Route path="/formateur" element={<Trainer />} />
               <Route path="/contact" element={<Contact />} />
-              <Route path="/training" element={<Training />} />
+              <Route path="/formation" element={<Training />} />
               <Route path="/formulaire-inscription" element={<FormulaireInscription />} />
-              <Route path="/manager/training" element={<ManagerTraining />} />
+              <Route path="/manager/formation" element={<ManagerTraining />} />
+              <Route path="/manager/formation/:id" element={<AddFormation/>} />
+              
+              //<Route path="/manager/formation/modif/:id" element={<PutFormation/>} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </div>
