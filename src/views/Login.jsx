@@ -23,7 +23,7 @@ export const Login = () => {
       }else{
         switch (data.nameClass) {
           case "Formateur":
-            navigate(`/trainer/${data.id}`)
+            navigate(`/formateur/${data.id}`)
             break;
           case "Etudiant":
             

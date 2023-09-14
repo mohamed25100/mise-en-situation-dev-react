@@ -11,6 +11,7 @@ import { FormulaireInscription } from './views/FormulaireInscription';
 import { ManagerTraining } from './views/manager/training';
 import { Route , Routes, BrowserRouter } from 'react-router-dom';
 import { Contenu } from './views/Contenu';
+import { ContenuDetail } from './views/ContenuDetail';
 
 const App = () => {
 
@@ -31,13 +32,14 @@ const App = () => {
               {/* element = composant // path: chemin dan l'url */}
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
-              <Route path="/student" element={<Student />} />
-              <Route path="/trainer/:id" element={<Trainer />} />
-              <Route path="/trainer/contenu/:id/:courId" element={<Contenu />} />
+              <Route path="/etudiant" element={<Student />} />
+              <Route path="/formateur/:id" element={<Trainer />} />
+              <Route path="/formateur/contenu/:id/:courId" element={<Contenu />} />
+              <Route path="/formateur/contenuDetail/:id" element={<ContenuDetail />} />
               <Route path="/contact" element={<Contact />} />
-              <Route path="/training" element={<Training />} />
+              <Route path="/formation" element={<Training />} />
               <Route path="/formulaire-inscription" element={<FormulaireInscription />} />
-              <Route path="/manager/training" element={<ManagerTraining />} />
+              <Route path="/manager/formation" element={<ManagerTraining />} />
               <Route path="*" element={<NotFound />} />
               
             </Routes>

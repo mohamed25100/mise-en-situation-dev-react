@@ -29,7 +29,7 @@ export const Trainer = () => {
     }
   }
   const handleClick =  (courId) => {
-    navigate(`/trainer/contenu/${param.id}/${courId}`)
+    navigate(`/formateur/contenu/${param.id}/${courId}`)
   }
 
   useEffect(()=>{

@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import { BackBtn, Btn } from "../components/Btn"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faInfo, faPen } from "@fortawesome/free-solid-svg-icons"
@@ -10,7 +10,9 @@ export const Contenu = () => {
     const {id,courId} = useParams()
     const CONTENU_URL = `//localhost:8080/contenu/formateur`
     const [contenus, setContenu] = useState([])
+    const navigate = useNavigate()
     
+
 
     const fecthContenu = async () => {
         try {
@@ -26,6 +28,7 @@ export const Contenu = () => {
             
           }
     }
+
 
     useEffect(()=>{
         fecthContenu()
@@ -61,7 +64,10 @@ export const Contenu = () => {
                                 <td className="border-b border-pink-700 p-4 pl-8 text-black text-center">
                                     <div className="flex justify-center gap-5">
                                         <FontAwesomeIcon icon={faPen} className="text-orange-700 p-1 hover:text-pink-700" size="lg" />
-                                        <FontAwesomeIcon icon={faInfo} className="text-gray-700 p-1 hover:text-pink-700" size="lg"  />
+                                        <FontAwesomeIcon icon={faInfo} className="text-gray-700 p-1 hover:text-pink-700" size="lg" onClick={(e)=>{
+                                            e.preventDefault()
+                                            navigate(`/formateur/contenuDetail/${contenu.id}`)
+                                        }} />
                                     </div>
                                     
                                 </td>
