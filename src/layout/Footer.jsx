@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDiscord, faFacebook, faInstagram, faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 export const Footer = () => {
 
@@ -26,12 +28,12 @@ export const Footer = () => {
     }, [])
 
     return (
-        <footer className='flex py-4 bg-orange-300 gap-5'>
+        <footer className='flex justify-around py-4 bg-orange-300 gap-5'>
             
             <FooterContact />
 
             {/* Le top 30 de nos formations */}
-            <TopFormations FormationsArray={FormationsArray} />
+            {/*<TopFormations FormationsArray={FormationsArray} />*/},
 
             {/* Découvrez Dawan */}
             <DecouvrezDawan />
@@ -77,9 +79,13 @@ export const TopFormations = ({ FormationsArray }) => {
 }
 
 export const DecouvrezDawan = () => {
+        const handleClick = (e) => {
+          e.preventDefault();
+          window.location.href= "/about";
+        }
     return (
         <div>
-            <h1 className="text-xl font-bold">Découvrez Dawan</h1>
+            <h1 className="text-xl font-bold"><button onClick={handleClick}>Découvrez Dawan</button></h1>
             <p>Présentation de notre organisme de formation</p>
             <p>Modalités pédagogiques</p>
             <p>Références</p>
@@ -90,5 +96,12 @@ export const SuivezNous = () => {
     return (
         <div>
             <h1 className="text-xl font-bold">Suivez nous</h1>
+
+           <FontAwesomeIcon className='mx-2' icon={faInstagram} />
+            <FontAwesomeIcon className='mx-2' icon={faFacebook} />
+            <FontAwesomeIcon className='mx-2' icon={faWhatsapp} />
+            <FontAwesomeIcon className='mx-2' icon={faDiscord} />
+            <FontAwesomeIcon className='mx-2' icon={faLinkedin} />
+            
         </div>)
 }

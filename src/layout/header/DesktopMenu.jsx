@@ -10,11 +10,12 @@ export const DesktopMenu = ({ links }) => {
 
         <li className='my-auto'>
           <ul className='flex justify-around gap-14'>
+          <li><Link to={"/"}>Home</Link></li>
           { manager === true && <li><Link to={"/manager/formations"}>Formations</Link></li>}
           { !manager && <li><Link to={"/formations"}>Formations</Link></li>}
             
             <li><Link to={"/contact"}>Contact</Link></li>
-            <li>Qui sommes-nous</li>
+            <li><Link to={"/about"}>Qui sommes-nous</Link></li>
           </ul>
         </li>
         <Link className='my-auto' to={"/login"}>se conecter</Link>

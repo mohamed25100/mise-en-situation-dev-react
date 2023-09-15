@@ -5,6 +5,7 @@ import { Home } from './views/Home';
 import Student from './views/Student';
 
 import { NotFound } from './views/NotFound';
+import { About } from './views/About';
 import { Login } from './views/Login';
 import { Footer } from './layout/Footer';
 import { Header } from './layout/Header';
@@ -41,7 +42,8 @@ const App = () => {
   
                 <Route path="/form" element={<FormulaireInscription />} />
                 <Route path="/manager/formations" element={<ManagerTraining />} />
-                <Route path="manager/formation/:id" element={<AddFormation />} />
+                <Route path="/manager/formation/:id" element={<AddFormation />} />
+                <Route path="/about" element={<About />} />
 
 
                 <Route path="*" element={<NotFound />} />

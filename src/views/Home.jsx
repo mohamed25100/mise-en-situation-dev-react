@@ -8,7 +8,7 @@ export const Home = () => {
 
       <div className='relative'>
       <img src="/img/head.png" alt="head" />
-      <h1 className='text-center text-4xl font-bold absolute right-1/2 bottom-2/4'>Home</h1>
+      <h1 className='text-center text-6xl text-neutral-600 font-bold absolute right-1/2 bottom-2/4 bg-white opacity-80 p-3 rounded-lg'>Bienvenu à dawan</h1>
       </div>
 
     
