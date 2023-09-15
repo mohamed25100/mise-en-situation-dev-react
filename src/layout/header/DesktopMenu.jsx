@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 export const DesktopMenu = ({ links }) => {
-  const manager = true;
+  const manager = false;
   return (
     <nav>
       <ul className='flex justify-between mx-5'>
