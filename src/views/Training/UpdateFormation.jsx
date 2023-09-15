@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { useState } from 'react';
-import { GoTo } from "../../components/Btn";
 export const UpdateFormation = () => {
   const [formData, setFormData] = useState({});
 
@@ -38,7 +37,7 @@ export const UpdateFormation = () => {
 
       </div>
     </form>
-    <GoTo link={"/manager/formations"} />
+    <Retour />
     </>
   );
 }

@@ -8,6 +8,28 @@ import { BtnAjouter } from '../../components/Btn'
 import { Link } from "react-router-dom";
 
 export const ManagerTraining = () => {
+  const [formData, setFormData] = useState({});
+
+
+      // GET with Axios
+      useEffect(() => {
+        const fetchPost = async () => {
+           let response = await axios.get('http://localhost:8085/manager/formation');
+           setFormData(response.data);
+        };
+        fetchPost();
+     }, []);
+
+
+      // DELETE with Axios
+   const deletePost = async (id) => {
+    await axios.delete(`http://localhost:8085/manager/formation/${id}`);
+    setFormData(
+      formData.filter((data) => {
+          return data.id !== id;
+       })
+    );
+ };
 
   const [FormationsArray, setFormation] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -58,11 +80,20 @@ export const ManagerTraining = () => {
                 <td className='text-center' key={index}>{formation.nomFormation}</td>
                 <td className='text-center'>{5}</td>
                 <td className='text-center'>{getyear}</td>
-                <td className='text-center'>    <Link className='mt-3 underline text-center text-pink-700' to={"/manager/formation/"+formation.id}>
+                <td className='text-center'>    
+                
+                {/* Update */}
+                <span>
+                <Link className='mt-3 underline text-center text-pink-700' to={"/manager/formation/"+formation.id}>
                 <FontAwesomeIcon className='mr-1 text-dark bg-amber-400 p-2 rounded-lg' icon={faPen} />
                 </Link>
+                </span>
                   
+
+                  {/* Delete */}
+                  <button onClick={() => deletePost(formation.id)}>
                   <FontAwesomeIcon className='ml-1 text-white bg-rose-600 p-2 rounded-lg' icon={faTrashCan} />
+                  </button>
                 </td>
               </tr>
 

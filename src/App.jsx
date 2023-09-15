@@ -12,9 +12,11 @@ import { Trainer } from './views/Trainer/Trainer';
 import { TrainerDetails } from './views/Trainer/TrainerDetails';
 import { Contact } from './views/Contact';
 import { Training } from './views/Training/Training';
-import { AddFormation }  from './views/Training/AddFormation';
+
 import { FormulaireInscription } from './views/FormulaireInscription';
 import { ManagerTraining } from './views/manager/training';
+
+import { AddFormation }  from './views/Training/AddFormation'; // ajouter une formation
 
 const App = () => {
     return(
@@ -36,10 +38,12 @@ const App = () => {
   
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/formations" element={<Training />} />
-                <Route path="manager/formation/:id" element={<AddFormation />} />
   
                 <Route path="/form" element={<FormulaireInscription />} />
                 <Route path="/manager/formations" element={<ManagerTraining />} />
+                <Route path="manager/formation/:id" element={<AddFormation />} />
+
+
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </div>
