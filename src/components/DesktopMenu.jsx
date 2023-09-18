@@ -1,7 +1,19 @@
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { logout } from '../store/actions/userAction'
+import { getIsLogin } from '../store/selectors/userSelector'
 
 export const DesktopMenu = ({ links }) => {
+
+  const isLogin = useSelector(getIsLogin)
+
+  const dispatch = useDispatch()
+
+  const handleLogout = () => {
+    dispatch(logout())
+  }
+
   return (
     <nav>
       <ul className='flex justify-between mx-5'>
@@ -14,7 +26,10 @@ export const DesktopMenu = ({ links }) => {
             <li>Qui sommes-nous</li>
           </ul>
         </li>
-        <Link className='my-auto' to={"/login"}>se connecter</Link>
+        {isLogin ? <Link className='my-auto' to={"/login"} onClick={handleLogout} >Se deconnecter</Link>
+        : <Link className='my-auto' to={"/login"}>se connecter</Link>}
+        
+        
       </ul>
     </nav>
   )

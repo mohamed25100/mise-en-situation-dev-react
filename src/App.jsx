@@ -13,11 +13,9 @@ import { Route , Routes, BrowserRouter } from 'react-router-dom';
 import { Contenu } from './views/Contenu';
 import { ContenuDetail } from './views/ContenuDetail';
 import { ContenuFormulaire } from './views/formulaire/ContenuFormulaire';
+import { User } from './views/User';
 
 const App = () => {
-
-
-  
 
     return(
         
@@ -33,13 +31,13 @@ const App = () => {
               {/* element = composant // path: chemin dan l'url */}
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
-              <Route path="/etudiant/:id" element={<Student />} />
-              <Route path="/etudiant/contenu/:id/:courId" element={<Contenu />} />
-              <Route path="/etudiant/contenuDetail/:id" element={<ContenuDetail />} />
-              <Route path="/formateur/:id" element={<Trainer />} />
-              <Route path="/formateur/contenu/:id/:courId" element={<Contenu />} />
-              <Route path="/formateur/contenuFormulaire/:id/:courId/:contenuId" element={<ContenuFormulaire />} />
-              <Route path="/formateur/contenuDetail/:id" element={<ContenuDetail />} />
+              <Route path="/etudiant" element={<User />} />
+              <Route path="/etudiant/contenu/:courId" element={<Contenu />} />
+              <Route path="/etudiant/contenuDetail/:contenuId" element={<ContenuDetail />} />
+              <Route path="/formateur" element={<User />} />
+              <Route path="/formateur/contenu/:courId" element={<Contenu />} />
+              <Route path="/formateur/contenuFormulaire/:courId/:contenuId" element={<ContenuFormulaire />} />
+              <Route path="/formateur/contenuDetail/:contenuId" element={<ContenuDetail />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/formation" element={<Training />} />
               <Route path="/formulaire-inscription" element={<FormulaireInscription />} />

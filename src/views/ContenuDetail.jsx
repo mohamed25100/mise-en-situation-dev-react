@@ -1,7 +1,9 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { BackBtn } from '../components/Btn';
+import { useSelector } from 'react-redux';
+import { getUserId } from '../store/selectors/userSelector';
 
 export const ContenuDetail = () => {
 
@@ -11,9 +13,17 @@ export const ContenuDetail = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
-    const param = useParams()
-    const API = `//localhost:8080/contenu/${param.id}`
-    const RESSOURCE = `//localhost:8080/contenu/file/${param.id}`
+    const userId = useSelector(getUserId)
+    const navigate = useNavigate()
+    useEffect(()=>{
+        if(userId<0){
+          navigate(`/login`)
+      }
+      },[])
+
+    const {contenuId} = useParams()
+    const API = `//localhost:8080/contenu/${contenuId}`
+    const RESSOURCE = `//localhost:8080/contenu/file/${contenuId}`
 
     const fecthContenu = async () => {
         setLoading(true)
@@ -66,7 +76,7 @@ export const ContenuDetail = () => {
             <div className='flex flex-col gap-2'>
                 
                     <h1 className='font-bold text-2xl text-pink-700 py-2'>{contenu.titre}</h1>
-                    <p className=''>{contenu.description}</p>
+                    <pre className=''>{contenu.description}</pre>
                 
             </div>
             

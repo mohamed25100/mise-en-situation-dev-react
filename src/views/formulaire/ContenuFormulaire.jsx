@@ -2,19 +2,23 @@ import React, { useEffect, useState } from 'react'
 import { BackBtn, BtnSubmit } from '../../components/Btn'
 import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
+import { useSelector } from 'react-redux'
+import { getUserId } from '../../store/selectors/userSelector'
 
 export const ContenuFormulaire = () => {
 
     const refFile = React.createRef()
     const [titre,setTitre] = useState("")
     const [description, setDescription] = useState("")
+    const userId = useSelector(getUserId)
 
     const [selectedFile, setSelectedFile] = useState("");
-    const {id,courId,contenuId} = useParams()
+    const {courId,contenuId} = useParams()
     const [version,setVersion] = useState(0)    
-    const [contenuDtoString,setContenuDtoString] = useState("{\"id\":"+contenuId+", \"version\": " +version+", \"titre\": \"\" , \"description\": \"\",\"formateurId\":"+id+", \"courId\": "+courId+" }")
-    const POST_URL = `//localhost:8080/contenu/file`
-    const GET_URL = `//localhost:8080/contenu/${contenuId}`
+    const [contenuDtoString,setContenuDtoString] = useState("{\"id\":"+contenuId+", \"version\": " +version+", \"titre\": \"\" , \"description\": \"\",\"formateurId\":"+userId+", \"courId\": "+courId+" }")
+    const POST_URL = `http://localhost:8080/contenu/file`
+    const POST_CREATE = `http://localhost:8080/contenu`
+    const GET_URL = `http://localhost:8080/contenu/${contenuId}`
     const navigate = useNavigate()
     const fecthContenu = async () => {
         if(contenuId>0){
@@ -35,18 +39,35 @@ export const ContenuFormulaire = () => {
         
         try {
             
-            const formData = new FormData()
-            formData.append('file',refFile.current.files[0])
-            formData.append("contenuDtoString",contenuDtoString)
+            
+            //formData.append("contenuDtoString",contenuDtoString)
+            //formData.append('dto',)
+            await axios.post(POST_CREATE,{id:contenuId, version: version, titre:titre, description:description,formateurId:userId, courId: courId} )
+            .then((res)=>{
+                console.log(refFile.current.files[0]);
+                if(refFile.current.files[0]){
+                    const formData = new FormData()
+                    formData.append('file',refFile.current.files[0])
+                    formData.append('id', res.data.id)
+                    axios({
+                        method : "post",
+                        url : POST_URL,
+                        data : formData,
+                        headers : { "Content-Type": "multipart/form-data" }
+                    })
+                }
+                /*
+                */
+            })/*
             await axios({
                 method: "post",
                 url: POST_URL,
                 data: {
                     'file' : refFile.current.files[0],
-                    "contenuDtoString" :  `{"id":"${contenuId}", "version": "${version}", "titre":"${titre}", "description":"${description}","formateurId":"${id}", "courId": "${courId}"}`
+                    "contenuDtoString" :  {"id":contenuId, "version": version, "titre":titre, "description":description,"formateurId":userId, "courId": courId}
                 },
                 headers: { "Content-Type": "multipart/form-data" },
-              })
+              })*/
             /*const {reponse} = await axios.post(POST_URL ,{
                 data : {
                     'file' : refFile.current.files[0],
@@ -93,12 +114,13 @@ export const ContenuFormulaire = () => {
             <div>
             <label htmlFor="desc">Decription:</label><br />
                     <textarea className='w-full py-2 px-2 border rounded-lg'
-                        type="text"
                         id="desc"
                         name="desc"
                         required
                         rows="10"
-                        onChange={(e)=>{setDescription(e.target.value)}}
+                        onChange={(e)=>{setDescription(e.target.value)
+                        
+                        }}
                         value={description}
                     />
             </div>   

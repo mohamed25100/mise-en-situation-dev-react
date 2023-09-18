@@ -1,6 +1,9 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom'
+import { USER_TYPES } from "../store/types/userTypes";
+import { useDispatch } from "react-redux";
+import { login } from "../store/actions/userAction";
 
 export const Login = () => {
 
@@ -11,6 +14,7 @@ export const Login = () => {
   const [password, setPassword] = useState("")
   const navigate = useNavigate()
   const BASE_URL_API = `//localhost:8080/user/login`
+  const dispatch = useDispatch()
 
   const loginUser = async () => {
     
@@ -21,17 +25,19 @@ export const Login = () => {
       if(data.id===0){
         setMessage("error")
       }else{
+        dispatch(login(data))
         switch (data.nameClass) {
-          case "Formateur":
-            navigate(`/formateur/${data.id}`)
-            break;
-          case "Etudiant":
-            navigate(`/etudiant/${data.id}`)
-            break;
-          case "Manager":
+          case USER_TYPES.USER_FORMATEUR:
             
+            navigate(`/formateur`)
             break;
-          case "User":
+          case USER_TYPES.USER_ETUDIANT:
+            navigate(`/etudiant`)
+            break;
+          case USER_TYPES.USER_MANAGER:
+            navigate(`/manager`)
+            break;
+          case "USER":
             
             break;
         
@@ -64,7 +70,7 @@ export const Login = () => {
                     <input type="email" name="email" id="email" className={inputClass} placeholder="Tapez votre email ici" onChange={(e)=> setEmail(e.target.value)} value={email} />
                     <label htmlFor="password">Mot de passe</label>
                     <input type="password" name="password" id="password" className={inputClass} placeholder="*********" onChange={(e)=> setPassword(e.target.value)} value={password} />
-                    <button type="submit" className="bg-red-700 my-2 p-2 w-1/2 ">S'inscrire</button>
+                    <button type="submit" className="bg-red-600 hover:bg-red-700 my-2 p-2 w-1/2 ">Se Connecter</button>
                 </form>
             </div>
       </main>
