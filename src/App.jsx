@@ -22,7 +22,7 @@ import { AddFormation }  from './views/Training/AddFormation'; // ajouter une fo
 const App = () => {
     return(
         <BrowserRouter>
-        <div className="flex flex-col justify-between bg-pink-50 text-gray-900 min-h-screen">
+        <div className="flex flex-col justify-between  text-gray-900 min-h-screen">
           <div className="flex flex-col">
             {/* HEADER */}
             <Header />

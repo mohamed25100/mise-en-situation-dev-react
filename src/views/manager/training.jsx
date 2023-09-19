@@ -29,6 +29,7 @@ export const ManagerTraining = () => {
           return data.id !== id;
        })
     );
+    fetchFormation();
  };
 
   const [FormationsArray, setFormation] = useState([]);

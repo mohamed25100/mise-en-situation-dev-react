@@ -96,12 +96,16 @@ export const SuivezNous = () => {
     return (
         <div>
             <h1 className="text-xl font-bold">Suivez nous</h1>
+        <a href="https://fr-fr.facebook.com/DawanFrance"><FontAwesomeIcon className='mx-2 text-3xl' icon={faInstagram} /></a>
+           
 
-           <FontAwesomeIcon className='mx-2' icon={faInstagram} />
-            <FontAwesomeIcon className='mx-2' icon={faFacebook} />
-            <FontAwesomeIcon className='mx-2' icon={faWhatsapp} />
-            <FontAwesomeIcon className='mx-2' icon={faDiscord} />
-            <FontAwesomeIcon className='mx-2' icon={faLinkedin} />
+        <a href="https://twitter.com/DawanFrance"><FontAwesomeIcon className='mx-2 text-3xl' icon={faFacebook} /></a>
+            
+        <a href="https://www.linkedin.com/company/dawan/"><FontAwesomeIcon className='mx-2 text-3xl' icon={faLinkedin} /></a>
+        
+            <FontAwesomeIcon className='mx-2 text-3xl' icon={faWhatsapp} />
+            <FontAwesomeIcon className='mx-2 text-3xl' icon={faDiscord} />
+            
             
         </div>)
 }
