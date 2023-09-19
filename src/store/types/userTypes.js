@@ -1,0 +1,10 @@
+export const USER_TYPES = {
+    USER_MANAGER : "MANAGER",
+    USER_FORMATEUR : "FORMATEUR",
+    USER_ETUDIANT : "ETUDIANT"
+}
+
+export const USER_CONNECT = {
+    USER_LOGIN : "LOGIN",
+    USER_LOGOUT : "LOGOUT"
+}
