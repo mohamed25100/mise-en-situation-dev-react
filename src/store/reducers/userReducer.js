@@ -4,8 +4,6 @@ const INITIAL_STATE = {
     userId : -1,
     formationId : 0,
     nameClass : "",
-    nom : "",
-    prenom : "",
     email : "",
     isLogin : false,
 }
@@ -14,15 +12,13 @@ export const UserReducer = (state= INITIAL_STATE, action) =>{
     const {type, payload} = action
     switch(type){
         case USER_CONNECT.USER_LOGIN : {
-            
             return {
                 ...state,
                 userId : payload.id,
                 formationId : payload.formationId,
-                nameClass : payload.nameClass,
-                nom : payload.nom,
-                prenom : payload.prenom,
+                nameClass : payload.roles,
                 email : payload.email   ,
+                token : payload.token,
                 isLogin : true
             }
         }
@@ -31,8 +27,6 @@ export const UserReducer = (state= INITIAL_STATE, action) =>{
                 userId : -1,
                 formationId : 0,
                 nameClass : "",
-                nom : "",
-                prenom : "",
                 email : "",
                 isLogin : false,
             }

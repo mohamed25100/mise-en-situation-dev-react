@@ -11,6 +11,7 @@ export const User = () => {
 
     const userId = useSelector(getUserId)
     const nameClass = useSelector(getNameClass)
+    console.log(nameClass);
     const navigate = useNavigate()
     
     useEffect(()=>{

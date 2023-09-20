@@ -13,39 +13,45 @@ export const Login = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const navigate = useNavigate()
-  const BASE_URL_API = `//localhost:8080/user/login`
+  const BASE_URL_API = `http://localhost:8080/authenticate`
   const dispatch = useDispatch()
 
   const loginUser = async () => {
     
     try {
-      const {data} = await axios.get(BASE_URL_API,{
-        params: {email: email, password:password}
-      })
-      if(data.id===0){
-        setMessage("error")
-      }else{
-        dispatch(login(data))
-        switch (data.nameClass) {
-          case USER_TYPES.USER_FORMATEUR:
+      await axios.post(BASE_URL_API,{
+         email: email, password:password
+      }).then(({data})=>{
+        if(data.id===0){
+          setMessage("error")
+        }else{
+          // await axios.get() // CREATION TOKEN 
+          console.log(data);
+            dispatch(login(data))
+            switch (data.roles) {
+              case USER_TYPES.USER_FORMATEUR:
+                navigate(`/formateur`)
+                break;
+              case USER_TYPES.USER_ETUDIANT:
+                navigate(`/etudiant`)
+                break;
+              case USER_TYPES.USER_MANAGER:
+                navigate(`/manager`)
+                break;
+              case "USER":
+                
+                break;
             
-            navigate(`/formateur`)
-            break;
-          case USER_TYPES.USER_ETUDIANT:
-            navigate(`/etudiant`)
-            break;
-          case USER_TYPES.USER_MANAGER:
-            navigate(`/manager`)
-            break;
-          case "USER":
-            
-            break;
-        
-          default:
-            console.log("Oupss je ne suis rien");
-            break;
+              default:
+                console.log("Oupss je ne suis rien");
+                break;
+            }
+          
+          
+          
         }
-      }
+      })
+      
     } catch (error) {
       console.log(error);
     }

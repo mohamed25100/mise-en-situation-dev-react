@@ -4,6 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { Cours } from '../Cours'
 import { useSelector } from 'react-redux'
 import { getUserId } from '../../store/selectors/userSelector'
+import { axiosInstance } from '../../interceptors/Interceptor'
 
 export const Formateur = () => {
 

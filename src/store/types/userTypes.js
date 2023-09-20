@@ -1,7 +1,7 @@
 export const USER_TYPES = {
-    USER_MANAGER : "MANAGER",
+    USER_MANAGER : "ADMIN",
     USER_FORMATEUR : "FORMATEUR",
-    USER_ETUDIANT : "ETUDIANT"
+    USER_ETUDIANT : "USER"
 }
 
 export const USER_CONNECT = {
