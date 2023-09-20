@@ -34,7 +34,7 @@ export const DesktopMenu = ({ links }) => {
             <li><Link className='font-bold text-xl' to={"/about"}>Qui sommes-nous</Link></li>
           </ul>
         </li>
-        <Link className='my-auto rounded-lg bg-amber-300 px-4 py-3 font-bold' to={"/login"}>se conecter</Link>
+        <Link className='my-auto rounded-lg bg-amber-300 px-4 py-3 font-bold' to={"/login"}>se connecter</Link>
         
         
       </ul>
